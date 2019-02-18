@@ -16,7 +16,7 @@ class view{
     }
 
    	private function generate_head(){
-   		$links = '<script src="js/ejercicio.js"></script>';
+   		$links = '<script src="ejercicio.js"></script>';
    		$title = '<title>Esto es una prueba</title>';
    		$head = '<head><meta charset="utf-8"/>'. $links. $title. '</head>';
 
