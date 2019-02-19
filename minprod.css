@@ -1,0 +1,20 @@
+#login_form{
+	background-color: red;
+	width: 200px;
+	height: 120px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -60px;
+	text-align: center;
+}
+
+#login_select{
+	margin: 5px;
+}
+
+.login_input{
+	display: inline-block;
+	margin: 5px;
+}
