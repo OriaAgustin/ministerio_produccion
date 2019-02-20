@@ -10,11 +10,21 @@
 	text-align: center;
 }
 
-#login_select{
+#login_type_select{
 	margin: 5px;
 }
 
 .login_input{
 	display: inline-block;
 	margin: 5px;
+}
+
+.main_view_wrapper{
+	background-color: #F9F9F9;
+	width: auto;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
 }
