@@ -9,23 +9,6 @@ class ministerio_produccion_view{
     	
     }
 
-    public function get_login(){
-        $this->set_login();
-
-        return $this->login;
-    }
-
-    private function set_login(){
-        $head = $this->generate_head();
-
-        $login_div = $this->generate_login_div();
-        $body = $this->generate_body($login_div);
-
-        $html = $this->generate_html($head. $body);
-
-        $this->login = $html;
-    }
-
     private function generate_head(){
         $links = '<script src="ministerio_produccion.js"></script>';
         $links .= '<link rel="stylesheet" type="text/css" href="ministerio_produccion.css">';
@@ -43,24 +26,37 @@ class ministerio_produccion_view{
     }
 
     private function generate_html($inner_html){
-    	$html = '<!DOCTYPE html><html lang="es">'. $inner_html. '</html>';
+        $head = $this->generate_head();
+        $body = $this->generate_body($inner_html);
+    	$html = '<!DOCTYPE html><html lang="es">'. $head. $body. '</html>';
 
     	return $html;
     }
 
-   	private function generate_login_div(){
-   		$login_select =	'<select id="login_select" onchange="change_profile_type(event);" name="login[login_type]">
-    						<option value="usuario_interno">Usuario interno</option>	
-    						<option value="empresa">Empresa</option>
-    					</select>';
-    	$login_inputs = '<input id="login_id_input" class="login_input" type="text" placeholder="Email" name="login[login_id]">
-   						<input id="login_password_input" class="login_input" type="password" placeholder="Contraseña" name="login[login_password]">';
-    	$login_button = '<input type="submit" value="Ingresar">';
+    public function get_login(){
+        $this->set_login();
 
-        $login_form = '<div class="login_wrapper"><form id="login_form" action="index.php" method="post">'. $login_select. $login_inputs. $login_button. '</form></div>';
+        return $this->login;
+    }
 
-   		return $login_form;
-   	}
+    private function set_login(){
+        //$head = $this->generate_head();
+        $login_select = '<select id="login_select" onchange="change_profile_type(event);" name="login[login_type]">
+                            <option value="usuario_interno">Usuario interno</option>    
+                            <option value="empresa">Empresa</option>
+                        </select>';
+        $login_inputs = '<input id="login_id_input" class="login_input" type="text" placeholder="Email" name="login[login_id]">
+                        <input id="login_password_input" class="login_input" type="password" placeholder="Contraseña" name="login[login_password]">';
+        $login_button = '<input type="submit" value="Ingresar">';
+
+        $login = '<div class="login_wrapper"><form id="login_form" action="index.php" method="post">'. $login_select. $login_inputs. $login_button. '</form></div>';
+
+        //$body = $this->generate_body($login_div);
+
+        //$html = $this->generate_html($head. $body);
+        $html = $this->generate_html($login);
+        $this->login = $html;
+    }
 
     public function get_main_view(){
     	$this->set_main_view();
@@ -69,15 +65,15 @@ class ministerio_produccion_view{
     }
 
     private function set_main_view(){
-    	$head = $this->generate_head();
+    	//$head = $this->generate_head();
 
         $data = $this->obtain_data();
     	$table = $this->generate_table($data);
 
-    	$body = $this->generate_body($table);
+        
+    	//$body = $this->generate_body();
 
-        $html = $this->generate_html($head. $body);
-
+        $html = $this->generate_html('<div class="main_view_wrapper"><form id="main_view_form" action="index.php" method="post">'. $table. '</form></div>');
     	$this->main_view = $html;
     }
 
@@ -118,6 +114,7 @@ class ministerio_produccion_view{
         while($register = $data->fetch_assoc()){
             $tds = array();
             foreach($register as $register_field){
+                //Meter inputs invisibles para el submit.
                 $tds[] = '<td>'. $register_field. '</td>';
             }
             $tds[] = '<td><input type="submit" value="Editar"></td>';
@@ -143,14 +140,11 @@ class ministerio_produccion_view{
     }
 
     private function set_login_error(){
-        $head = $this->generate_head();
-
-    	$message =	'<p>Usuario o contrase&nacute;a no validos.</p>';
+        $message =	'<p>Usuario o contrase&nacute;a no validos.</p>';
     	$retry_button = '<input type="submit" value="Volver a intentar">';
         $error_form = '<div class="login_wrapper"><form id="error_form" action="index.php" method="post">'. $message. $retry_button. '</form></div>';
-        $body = $this->generate_body($error_form);
 
-        $html = $this->generate_html($head. $body);
+        $html = $this->generate_html($error_form);
 
     	$this->login_error = $html;
     }
