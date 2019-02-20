@@ -2,7 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT']. '/kint.phar');
 
-class minprod_validator{
+class ministerio_produccion_login_validator{
     private $mysql;
     private $tables = array();
     private $idfields = array();
@@ -30,9 +30,9 @@ class minprod_validator{
 		ESCAPAR ARGUMENTOS
     */
     public function validate_login($login){
-    	$query =	'SELECT * FROM '. $this->tables[$login['type_login']]. 
-    				' WHERE '. $this->id_fields[$login['type_login']]. '="'. $login['id_login']. 
-    				'" AND password=PASSWORD("'. $login['password_login']. '")';
+    	$query =	'SELECT * FROM '. $this->tables[$login['login_type']]. 
+    				' WHERE '. $this->id_fields[$login['login_type']]. '="'. $login['login_id']. 
+    				'" AND password=PASSWORD("'. $login['login_password']. '")';
     	$result = $this->mysql->query($query);
 		$user = $result->fetch_assoc();
     	
