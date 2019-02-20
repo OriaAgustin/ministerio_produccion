@@ -27,8 +27,8 @@ class ministerio_produccion_view{
     }
 
     private function generate_head(){
-        $links = '<script src="minprod.js"></script>';
-        $links .= '<link rel="stylesheet" type="text/css" href="minprod.css">';
+        $links = '<script src="ministerio_produccion.js"></script>';
+        $links .= '<link rel="stylesheet" type="text/css" href="ministerio_produccion.css">';
         $title = '<title>Ministerio de Produccion</title>';
         $meta = '<meta charset="utf-8"/>';
         $head = '<head>'. $meta. $links. $title. '</head>';
