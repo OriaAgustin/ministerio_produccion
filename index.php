@@ -8,7 +8,11 @@ $view = new view();
 switch(true){
 	case $_POST['login']:
 		$minprod_validator = new minprod_validator();
-		print $minprod_validator->validate_login($_POST['login']);
+		if($minprod_validator->validate_login($_POST['login'])){
+			//print $view->get_main_view();
+		}else{
+			//print $view->get_login_error();
+		}
 		break;
 	default:
 		print $view->get_initial_html();
