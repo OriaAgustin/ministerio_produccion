@@ -10,7 +10,7 @@ function change_profile_type(event){
 			var placeholder = "Email";
 			break;
 	}
-	var id_login_input = document.getElementById('id_login_input');
+	var id_login_input = document.getElementById('login_id_input');
 	console.log(id_login_input);
 	id_login_input.placeholder = placeholder;
 }
