@@ -1,6 +1,6 @@
 <?php
 /*Separar en clases hijas y padre?*/
-class ministerio_produccion_usuario_interno_view extends ministerio_produccion_view{
+class ministerio_produccion_usuarios_internos_view extends ministerio_produccion_view{
     protected $table_to_show;
     protected $fields_to_show;
 
@@ -16,6 +16,6 @@ class ministerio_produccion_usuario_interno_view extends ministerio_produccion_v
 
     private function set_fields_to_show(){
         //[!] Deberia sacarse de un archivo de configuracion.
-        $this->fields_to_show = array('cuit', 'nombre');
+        $this->fields_to_show = array('cuit', 'nombre', 'password');
     }
 }
