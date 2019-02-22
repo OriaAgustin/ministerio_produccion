@@ -1,13 +1,7 @@
-.login_wrapper{
-	background-color: #0695D6;
-	width: 200px;
-	height: 120px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -100px;
-	margin-top: -60px;
-	text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial";
 }
 
 #login_type_select{
@@ -19,12 +13,58 @@
 	margin: 5px;
 }
 
-.main_view_wrapper{
-	background-color: #F9F9F9;
-	width: auto;
+#main_view_wrapper{
+	width: 400px;
 	height: auto;
+	margin-left: -200px;
+}
+
+#edit_item_wrapper{
+	width: 700px;
+	height: auto;
+	margin-left: -350px;
+}
+
+#add_item_wrapper{
+	width: 260px;
+	height: auto;
+	margin-left: -130px;
+}
+
+.wrapper{
+	background-color: #F9F9F9;
 	position: absolute;
 	left: 50%;
-	top: 50%;
 	text-align: center;
+}
+
+.table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > th{
+    padding: 8px;
+    line-height: 1.42857143;
+    border-top: 1px solid #ddd;
+}
+
+.td_containning_input{
+	vertical-align: middle;
+}
+
+#login_wrapper{
+	background-color: #0695D6;
+	width: 200px;
+	height: 120px;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -60px;
+}
+
+#save_edition_result_wrapper{
+	width: 350px;
+	height: auto;
+	margin-left: -175px;
+}
+
+#generate_report_wrapper{
+	width: 470px;
+	height: auto;
+	margin-left: -235px;
 }
