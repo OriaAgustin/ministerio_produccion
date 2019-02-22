@@ -12,7 +12,7 @@ docker run -d -p 80:80 -p 3306:3306 agustinoria/ministerio_produccion
 Container con volumen:
 docker run -d -p 80:80 -p 3306:3306 -v "/directorio_de_preferencia:/app" agustinoria/ministerio_produccion
 
-• PASO 3: Cargar un set de archivos en la base de datos:
+• PASO 3: Cargar un set de datos en la base de datos:
 
 chmod +x ministerio_produccion_database_configuration.sh
 ./ministerio_produccion_database_configuration.sh
