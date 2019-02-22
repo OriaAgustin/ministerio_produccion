@@ -1,3 +1,5 @@
+#!/bin/sh
+
 mysql -u root
 
 CREATE DATABASE ministerio_produccion;
