@@ -59,8 +59,8 @@ class ministerio_produccion_view{
                             <option value="usuario_interno">Usuario interno</option>    
                             <option value="empresa">Empresa</option>
                         </select>';
-        $login_inputs = '<input id="login_id_input" class="login_input" type="text" placeholder="Email" value="agustin.oria@gmail.com">
-                        <input id="login_password_input" class="login_input" type="password" placeholder="Contraseña" value="a">';
+        $login_inputs = '<input id="login_id_input" class="login_input" type="text" placeholder="Email">
+                        <input id="login_password_input" class="login_input" type="password" placeholder="Contraseña">';
         $login_button = '<input type="button" value="Ingresar" onclick="login();">';
 
         $login = '<div id="login_wrapper" class="wrapper">'. $login_select. $login_inputs. $login_button. '</div>';
