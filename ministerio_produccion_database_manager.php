@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']. '/kint.phar');
+require_once($_SERVER['DOCUMENT_ROOT']. '/libraries/kint.phar');
 
 class ministerio_produccion_database_manager{
     private $mysql;

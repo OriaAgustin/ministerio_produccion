@@ -2,7 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT']. '/ministerio_produccion_view.php');
 require_once($_SERVER['DOCUMENT_ROOT']. '/ministerio_produccion_database_manager.php');
-require_once($_SERVER['DOCUMENT_ROOT']. '/kint.phar');
+require_once($_SERVER['DOCUMENT_ROOT']. '/libraries/kint.phar');
 
 session_start();
 
