@@ -16,3 +16,9 @@ docker run -d -p 80:80 -p 3306:3306 -v "/directorio_de_preferencia:/app" agustin
 
 chmod +x ministerio_produccion_database_configuration.sh
 ./ministerio_produccion_database_configuration.sh
+
+• PASO 4: Obtener IP de la docker-machine:
+
+docker-machine ip
+
+• PASO 5: Abrir el proyecto en cualquier browser (de preferencia mozilla/chrome) usando la IP de la docker-machine.
